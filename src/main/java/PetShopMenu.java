@@ -1,12 +1,10 @@
 import Screens.TelaCadastroAnimal;
 import Screens.TelaCadastroCliente;
-import Screens.TelaCadastroProduto;
-
+import Screens.TelaServico;
+import Screens.TelaProduto;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PetShopMenu extends JFrame {
     public static class Menu {
@@ -19,34 +17,20 @@ public class PetShopMenu extends JFrame {
 
             JButton animalButton = new JButton("Animal");
             JButton clienteButton = new JButton("Cliente");
+            JButton servicoButton = new JButton("Servico");
             JButton produtoButton = new JButton("Produto");
 
-            animalButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    new TelaCadastroAnimal();
-                }
-            });
-            clienteButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    new TelaCadastroCliente();
-                }
-            });
-            produtoButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    new TelaCadastroProduto();
-                }
-            });
+            animalButton.addActionListener(e -> new TelaCadastroAnimal());
+            clienteButton.addActionListener(e -> new TelaCadastroCliente());
+            servicoButton.addActionListener(e -> new TelaServico());
+            produtoButton.addActionListener(e -> new TelaProduto());
 
             frame.add(animalButton);
             frame.add(clienteButton);
+            frame.add(servicoButton);
             frame.add(produtoButton);
 
             frame.setVisible(true);
-
-
         }
     }
 }

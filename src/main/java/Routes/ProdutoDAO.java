@@ -21,7 +21,7 @@ public class ProdutoDAO {
                 Produto produto = new Produto(
                         rs.getInt("ID_Produto"),
                         rs.getString("nome"),
-                        rs.getDouble("preco"),
+                        rs.getBigDecimal("preco"),
                         rs.getInt("quantidade")
                 );
                 produtoMap.put(produto.getID_Produto(), produto);
@@ -37,7 +37,7 @@ public class ProdutoDAO {
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, produto.getNome());
-            stmt.setDouble(2, produto.getPreco());
+            stmt.setBigDecimal(2, produto.getPreco());
             stmt.setInt(3, produto.getQuantidade());
 
             stmt.executeUpdate();
@@ -56,7 +56,7 @@ public class ProdutoDAO {
                     return new Produto(
                             rs.getInt("ID_Produto"),
                             rs.getString("nome"),
-                            rs.getDouble("preco"),
+                            rs.getBigDecimal("preco"),
                             rs.getInt("quantidade")
                     );
                 }

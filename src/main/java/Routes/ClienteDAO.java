@@ -21,7 +21,7 @@ public class ClienteDAO {
                         rs.getString("Nome"),
                         rs.getString("Rua"),
                         rs.getString("Estado"),
-                        rs.getInt("CEP"),
+                        rs.getString("CEP"),
                         rs.getString("CPF")
 
                 );
@@ -39,7 +39,7 @@ public class ClienteDAO {
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getRua());
             stmt.setString(3, cliente.getEstado());
-            stmt.setInt(4, cliente.getCEP());
+            stmt.setString(4, cliente.getCEP());
             stmt.setString(5, cliente.getCPF());
 
             stmt.executeUpdate();
@@ -60,7 +60,7 @@ public class ClienteDAO {
                             rs.getString("Nome"),
                             rs.getString("Rua"),
                             rs.getString("Estado"),
-                            rs.getInt("CEP"),
+                            rs.getString("CEP"),
                             rs.getString("CPF")
                     );
                 }

@@ -13,7 +13,7 @@ public class TelaCadastroAnimal extends JFrame {
     private JTextField txtNome;
     private JTextField txtIDCliente;
     private JTextField txtIDEspecie;
-    private JTextField txtIDRaca;
+
     private JButton btnSalvar;
 
     public TelaCadastroAnimal() {
@@ -46,14 +46,6 @@ public class TelaCadastroAnimal extends JFrame {
         txtIDEspecie.setBounds(130, 100, 160, 25);
         add(txtIDEspecie);
 
-        JLabel lblIDRaca = new JLabel("ID Raça:");
-        lblIDRaca.setBounds(20, 140, 100, 25);
-        add(lblIDRaca);
-
-        txtIDRaca = new JTextField();
-        txtIDRaca.setBounds(130, 140, 160, 25);
-        add(txtIDRaca);
-
         btnSalvar = new JButton("Salvar");
         btnSalvar.setBounds(100, 190, 120, 30);
         add(btnSalvar);
@@ -65,9 +57,8 @@ public class TelaCadastroAnimal extends JFrame {
                     String nome = txtNome.getText();
                     Integer idCliente = Integer.parseInt(txtIDCliente.getText());
                     Integer idEspecie = Integer.parseInt(txtIDEspecie.getText());
-                    Integer idRaca = Integer.parseInt(txtIDRaca.getText());
 
-                    Animal animal = new Animal(null, nome, idCliente, idEspecie, idRaca);
+                    Animal animal = new Animal(null, nome, idCliente, idEspecie);
                     AnimalDAO dao = new AnimalDAO();
                     dao.addAnimal(animal);
 

@@ -74,7 +74,7 @@ public class TelaCadastroCliente extends JFrame {
                     String nome = txtNome.getText();
                     String rua = txtRua.getText();
                     String estado = txtEstado.getText();
-                    int cep = Integer.parseInt(txtCEP.getText());
+                    String cep = txtCEP.getText();
                     String cpf = txtCPF.getText();
 
                     Cliente cliente = new Cliente(null, nome, rua, estado, cep, cpf);

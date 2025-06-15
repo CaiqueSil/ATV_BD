@@ -5,15 +5,14 @@ public class Animal {
     private String Nome;
     private Integer ID_cliente;
     private Integer ID_Especie;
-    private Integer ID_Raca;
 
     // Constructor
-    public Animal(Integer ID_Animal, String Nome, Integer ID_cliente, Integer ID_Especie, Integer ID_Raca) {
+    public Animal(Integer ID_Animal, String Nome, Integer ID_cliente, Integer ID_Especie) {
         this.ID_Animal = ID_Animal;
         this.Nome = Nome;
         this.ID_cliente = ID_cliente;
         this.ID_Especie = ID_Especie;
-        this.ID_Raca = ID_Raca;
+
     }
 
     // Getters
@@ -29,9 +28,6 @@ public class Animal {
         return ID_Especie;
     }
 
-    public Integer getID_Raca() {
-        return ID_Raca;
-    }
 
     // Setters
     public void setNome(String Nome) {
@@ -46,9 +42,7 @@ public class Animal {
         this.ID_Especie = ID_Especie;
     }
 
-    public void setID_Raca(Integer ID_Raca) {
-        this.ID_Raca = ID_Raca;
-    }
+
 
     @Override
     public String toString() {
@@ -56,7 +50,6 @@ public class Animal {
                 "Nome='" + Nome + '\'' +
                 ", ID_cliente=" + ID_cliente +
                 ", ID_Especie=" + ID_Especie +
-                ", ID_Raca=" + ID_Raca +
                 '}';
     }
 

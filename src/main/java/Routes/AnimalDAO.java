@@ -21,8 +21,8 @@ public class AnimalDAO {
                         Math.toIntExact(rs.getLong("ID_Animal")),
                         rs.getString("Nome"),
                         Math.toIntExact(rs.getLong("ID_cliente")),
-                        Math.toIntExact(rs.getLong("ID_Especie")),
-                        Math.toIntExact(rs.getLong("ID_Raca"))
+                        Math.toIntExact(rs.getLong("ID_Especie"))
+
                 );
                 animalMap.put(Math.toIntExact(rs.getLong("ID_Animal")),animal);
             }
@@ -31,7 +31,7 @@ public class AnimalDAO {
     }
 
     public void addAnimal(Animal animal) throws SQLException {
-        String query = "INSERT INTO Animal (Nome, ID_cliente, ID_Especie, ID_Raca) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO Animal (Nome, ID_cliente, ID_Especie) VALUES (?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -39,7 +39,7 @@ public class AnimalDAO {
             stmt.setString(1, animal.getNome());
             stmt.setLong(2, animal.getID_cliente());
             stmt.setLong(3, animal.getID_Especie());
-            stmt.setLong(4, animal.getID_Raca());
+
 
             stmt.executeUpdate();
         }
@@ -57,8 +57,7 @@ public class AnimalDAO {
                             Math.toIntExact(rs.getLong("ID_Animal")),
                             rs.getString("Nome"),
                             Math.toIntExact(rs.getLong("ID_cliente")),
-                            Math.toIntExact(rs.getLong("ID_Especie")),
-                            Math.toIntExact(rs.getLong("ID_Raca"))
+                            Math.toIntExact(rs.getLong("ID_Especie"))
                     );
                 }
             }

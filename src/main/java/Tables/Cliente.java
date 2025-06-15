@@ -5,10 +5,10 @@ public class Cliente {
     private String Nome;
     private String Rua;
     private String Estado;
-    private Integer CEP;
+    private String CEP;
     private String CPF;
 
-    public Cliente(Integer ID_Cliente, String Nome, String Rua, String Estado, Integer CEP, String CPF){
+    public Cliente(Integer ID_Cliente, String Nome, String Rua, String Estado, String CEP, String CPF){
         this.ID_Cliente = ID_Cliente;
         this.Nome = Nome;
         this.Rua = Rua;
@@ -35,7 +35,7 @@ public class Cliente {
         return Estado;
     }
 
-    public Integer getCEP() {
+    public String getCEP() {
         return CEP;
     }
     public String getCPF() {
@@ -60,7 +60,7 @@ public class Cliente {
         this.Estado = Estado;
     }
 
-    public void setCEP(Integer CEP) {
+    public void setCEP(String CEP) {
         this.CEP = CEP;
     }
 

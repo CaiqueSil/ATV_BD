@@ -1,13 +1,15 @@
 package Tables;
 
+import java.math.BigDecimal;
+
 public class Produto {
     private Integer ID_Produto;
     private String nome;
-    private Double preco;
+    private BigDecimal preco;
     private Integer quantidade;
 
     // Construtor
-    public Produto(Integer ID_Produto, String nome, Double preco, Integer quantidade) {
+    public Produto(Integer ID_Produto, String nome, BigDecimal preco, Integer quantidade) {
         this.ID_Produto = ID_Produto;
         this.nome = nome;
         this.preco = preco;
@@ -23,7 +25,7 @@ public class Produto {
         return nome;
     }
 
-    public Double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
@@ -40,7 +42,7 @@ public class Produto {
         this.nome = nome;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 

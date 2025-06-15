@@ -6,16 +6,17 @@ import Routes.ProdutoDAO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 
-public class TelaCadastroProduto extends JFrame {
+public class TelaProduto extends JFrame {
 
     private JTextField txtNome;
     private JTextField txtPreco;
     private JTextField txtQuantidade;
     private JButton btnSalvar;
 
-    public TelaCadastroProduto() {
+    public TelaProduto() {
         setTitle("Cadastro de Produto");
         setSize(350, 240);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -54,7 +55,7 @@ public class TelaCadastroProduto extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String nome = txtNome.getText();
-                    double preco = Double.parseDouble(txtPreco.getText());
+                    BigDecimal preco = BigDecimal.valueOf(Double.parseDouble(txtPreco.getText()));
                     int quantidade = Integer.parseInt(txtQuantidade.getText());
 
                     Produto produto = new Produto(null, nome, preco, quantidade);
@@ -74,6 +75,6 @@ public class TelaCadastroProduto extends JFrame {
     }
 
     public static void main(String[] args) {
-        new TelaCadastroProduto();
+        new TelaProduto();
     }
 }
